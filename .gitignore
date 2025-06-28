@@ -1,1 +1,3 @@
-src/apps/android/TrustWalletApp.apk
+target/
+.vscode/
+.idea/
