@@ -8,7 +8,5 @@ public class ReceivePage extends BasePage {
 
     public String getReceiveTitleText() {
         return find(receiveTitle).getText();
-} 
-
-    
+    }
 }

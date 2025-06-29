@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import utils.TestData;
 
 public class PinCodePage extends BasePage {
 
@@ -17,8 +18,8 @@ public class PinCodePage extends BasePage {
         return find(confirmPasscodeText).getText();
     }
 
-   public void enterPinCode(String pinCode) {
-    for (char digit : pinCode.toCharArray()) {
+   public void enterPinCode() {
+    for (char digit : TestData.DEFAULT_PIN_CODE.toCharArray()) {
         click(pinDigit(digit));
     }
 }

@@ -1,9 +1,39 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="SampleMobileAutomation">
-    <test name="Create Wallet Test">
+<suite name="TrustWalletMobileAutomation" parallel="tests" thread-count="1">
+    
+    <test name="Create Wallet Tests">
         <parameter name="platformName" value="Android"/>
         <classes>
-            <class name="tests.CreateWallet.CreateWalletTest"/>
+            <class name="tests.CreateWallet.CreateWalletTests"/>
         </classes>
     </test>
+    
+    <test name="Import Wallet Tests">
+        <parameter name="platformName" value="Android"/>
+        <classes>
+            <class name="tests.ImportWallet.ImportWalletTests"/>
+        </classes>
+    </test>
+    
+    <test name="Send Tests">
+        <parameter name="platformName" value="Android"/>
+        <classes>
+            <class name="tests.Send.SendTests"/>
+        </classes>
+    </test>
+    
+    <test name="Deposit Tests">
+        <parameter name="platformName" value="Android"/>
+        <classes>
+            <class name="tests.Deposit.DepositCryptoTests"/>
+        </classes>
+    </test>
+    
+    <test name="Swap Tests">
+        <parameter name="platformName" value="Android"/>
+        <classes>
+            <class name="tests.Swap.SwapTests"/>
+        </classes>
+    </test>
+    
 </suite>

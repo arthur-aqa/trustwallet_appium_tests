@@ -5,10 +5,16 @@ import org.openqa.selenium.By;
 public class CreateWalletPage extends BasePage {
 
     private By createWalletButton = By.id("CreateNewWalletButton");
-    private By ImportWalletButton = By.id("ImportWalletButton");
+    private By importWalletButton = By.id("ImportWalletButton");
+
 
     public PinCodePage clickButton() {
         click(createWalletButton);
         return new PinCodePage();
+    }
+
+    public ImportWalletPage clickImportWalletButton() {
+        click(importWalletButton);
+        return new ImportWalletPage();
     }
 }
