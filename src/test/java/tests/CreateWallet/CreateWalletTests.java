@@ -4,6 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pages.HomePage;
+import pages.PinCodePage;
 import tests.Base.BaseTest;
 import utils.TestData;
 
@@ -11,7 +12,7 @@ public class CreateWalletTests extends BaseTest {
 
     @Test(description = "Creating a new wallet")
     public void testCreateWallet() {
-        pinCodePage = createWalletPage.clickButton();
+        PinCodePage pinCodePage = createWalletPage.clickButton();
         String actualTitle = pinCodePage.getPassCodeText();
         Assert.assertEquals(actualTitle, TestData.CREATE_PASSCODE_TEXT);
         
