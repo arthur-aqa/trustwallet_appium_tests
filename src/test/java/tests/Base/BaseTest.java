@@ -36,8 +36,8 @@ public class BaseTest {
         
         pinCodePage = importWalletPage.clickImportButton();
         
-        pinCodePage.enterPinCode(TestData.DEFAULT_PIN_CODE);
-        pinCodePage.enterPinCode(TestData.DEFAULT_PIN_CODE);
+        pinCodePage.enterPinCode();
+        pinCodePage.enterPinCode();
         
         homePage = walletReadyPage.clickButton();
         return homePage;
