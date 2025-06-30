@@ -8,13 +8,13 @@ public class WelcomePage extends BasePage {
     private By importWalletButton = By.id("ImportWalletButton");
 
 
-    public PinCodePage clickCreateWalletButton() {
+    public PassCodePage clickCreateWalletButton() {
         click(createWalletButton);
-        return new PinCodePage();
+        return new PassCodePage();
     }
 
-    public PinCodePage clickImportWalletButton() {
+    public PassCodePage clickImportWalletButton() {
         click(importWalletButton);
-        return new PinCodePage();
+        return new PassCodePage();
     }
 }

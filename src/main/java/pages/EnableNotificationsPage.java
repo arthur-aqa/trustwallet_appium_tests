@@ -11,12 +11,12 @@ public class EnableNotificationsPage extends BasePage {
         return find(marketTitle).getText();
     }
 
-    public WalletReadyPage clickButtonWalletReadyPage() {
+    public WalletReadyPage clickSkipButtonWalletReadyPage() {
         click(skipButton);
         return new WalletReadyPage();
     }
 
-    public ImportMethodPage clickButtonImportMethodPage() {
+    public ImportMethodPage clickSkipButtonImportMethodPage() {
         click(skipButton);
         return new ImportMethodPage();
     }

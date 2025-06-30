@@ -1,26 +1,25 @@
-package tests.Welcome;
+package tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pages.HomePage;
-import pages.PinCodePage;
-import tests.Base.BaseTest;
+import pages.PassCodePage;
 import utils.TestData;
 
 public class CreateWalletTests extends BaseTest {
 
     @Test(description = "Creating a new wallet")
     public HomePage testCreateWallet() {
-        PinCodePage pinCodePage = welcomePage.clickCreateWalletButton();
-        String actualTitle = pinCodePage.getPassCodeText();
+        PassCodePage passCodePage = welcomePage.clickCreateWalletButton();
+        String actualTitle = passCodePage.getPassCodeText();
         Assert.assertEquals(actualTitle, TestData.CREATE_PASSCODE_TEXT);
         
-        pinCodePage.enterPinCode();
-        String confirmPasscodeText = pinCodePage.getConfirmPasscodeText();
+        passCodePage.enterPasscode();
+        String confirmPasscodeText = passCodePage.getConfirmPasscodeText();
         Assert.assertEquals(confirmPasscodeText, TestData.CONFIRM_PASSCODE_TEXT);
 
-        pinCodePage.enterPinCode();
+        passCodePage.enterPasscode();
         String enableNotificationsTitle = enableNotificationsPage.getMarketTitle();
         Assert.assertEquals(enableNotificationsTitle, TestData.MARKET_TITLE_TEXT);
 

@@ -1,0 +1,17 @@
+/Users/artur/Downloads/trustwallet_appium_tests/src/main/java/pages/BasePage.java
+/Users/artur/Downloads/trustwallet_appium_tests/src/main/java/pages/ConfirmPasscodePage.java
+/Users/artur/Downloads/trustwallet_appium_tests/src/main/java/pages/EnableNotificationsPage.java
+/Users/artur/Downloads/trustwallet_appium_tests/src/main/java/pages/HomePage.java
+/Users/artur/Downloads/trustwallet_appium_tests/src/main/java/pages/ImportCheckmarksPage.java
+/Users/artur/Downloads/trustwallet_appium_tests/src/main/java/pages/ImportMethodPage.java
+/Users/artur/Downloads/trustwallet_appium_tests/src/main/java/pages/ImportSeedPage.java
+/Users/artur/Downloads/trustwallet_appium_tests/src/main/java/pages/MultiCoinWalletImportPage.java
+/Users/artur/Downloads/trustwallet_appium_tests/src/main/java/pages/PassCodePage.java
+/Users/artur/Downloads/trustwallet_appium_tests/src/main/java/pages/ReceivePage.java
+/Users/artur/Downloads/trustwallet_appium_tests/src/main/java/pages/SelectNetworkPage.java
+/Users/artur/Downloads/trustwallet_appium_tests/src/main/java/pages/SendPage.java
+/Users/artur/Downloads/trustwallet_appium_tests/src/main/java/pages/WalletReadyPage.java
+/Users/artur/Downloads/trustwallet_appium_tests/src/main/java/pages/WelcomePage.java
+/Users/artur/Downloads/trustwallet_appium_tests/src/main/java/utils/DriverUtils.java
+/Users/artur/Downloads/trustwallet_appium_tests/src/main/java/utils/TestData.java
+/Users/artur/Downloads/trustwallet_appium_tests/src/main/java/utils/WaitUtils.java

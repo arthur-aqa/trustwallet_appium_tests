@@ -125,8 +125,6 @@ And pastes the address into the explorer's search field
 Then the explorer displays the correct wallet address and its details
 ```
 
-## Feature: Wallet Recovery and Creation
-
 ### Scenario: Canceling notifications during wallet recovery and then creating a new wallet
 ```gherkin
 Given the user launches the Trust Wallet application
