@@ -5,19 +5,18 @@ This project contains automated UI tests for the Trust Wallet mobile application
 ## Project Structure
 
 ```
-src/
-├── main/
-│   └── java/
-│       └── pages/                # Page Object classes (e.g., WelcomePage, PassCodePage, HomePage, etc.)
-│       └── utils/                # Utility classes (TestData, WaitUtils, etc.)
-├── test/
-│   └── java/
-│       └── tests/
-│           └── Base/            # Base test class
-│           └── CreateWallet/    # Tests for wallet creation
-│           └── ...              # Other test folders
-│   └── Manual_Tests.md          # Manual test scenarios in  Gherkin format
-└── testng.xml                   # TestNG suite configuration
+trustwallet_appium_tests/
+├── src/
+│   ├── main/java/
+│   │   ├── pages/      # Page Object classes for each app screen
+│   │   └── utils/      # Test data, driver, wait helpers
+│   └── test/java/
+│       ├── tests/      # Test classes (CreateWalletTests, ImportWalletTests, etc.)
+│       └── utils/Helpers/ # Helper classes for test flows
+├── manual_tests.md     # Manual test scenarios (Gherkin)
+├── testng.xml          # TestNG suite config
+├── pom.xml             # Maven project file
+└── README.md           # Project documentation
 ```
 
 ## Getting Started
@@ -25,7 +24,7 @@ src/
 ### Prerequisites
 - Java 11+
 - Maven
-- Appium server running (default: http://127.0.0.1:4725/wd/hub)
+- Appium server (default: http://127.0.0.1:4725/wd/hub)
 - Android emulator or real device
 
 ### Setup
@@ -50,16 +49,10 @@ To run all tests:
 mvn test
 ```
 
-To run a specific suite (e.g., Create Wallet tests):
+To run a specific suite:
 ```bash
 mvn -DsuiteXmlFile=testng.xml test
 ```
-
-## Key Components
-- **Page Objects**: Encapsulate UI interactions for each screen (e.g., WelcomePage, PassCodePage, HomePage, ImportSeedPage, etc.)
-- **TestData**: Centralized test data and constants
-- **WaitUtils**: Utility methods for explicit waits
-- **BaseTest**: Common setup/teardown and flows for all tests
 
 ## Manual Test Scenarios
 Manual test scenarios in Gherkin format can be found in `manual_tests.md` in the project root.
