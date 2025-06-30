@@ -8,7 +8,7 @@ This project contains automated UI tests for the Trust Wallet mobile application
 src/
 ├── main/
 │   └── java/
-│       └── pages/                # Page Object classes (e.g., WelcomePage, PinCodePage, HomePage, etc.)
+│       └── pages/                # Page Object classes (e.g., WelcomePage, PassCodePage, HomePage, etc.)
 │       └── utils/                # Utility classes (TestData, WaitUtils, etc.)
 ├── test/
 │   └── java/
@@ -16,7 +16,7 @@ src/
 │           └── Base/            # Base test class
 │           └── CreateWallet/    # Tests for wallet creation
 │           └── ...              # Other test folders
-│   └── Manual_Tests.md          # Manual test scenarios in Gherkin format
+│   └── Manual_Tests.md          # Manual test scenarios in  Gherkin format
 └── testng.xml                   # TestNG suite configuration
 ```
 
@@ -52,22 +52,17 @@ mvn test
 
 To run a specific suite (e.g., Create Wallet tests):
 ```bash
-mvn -DsuiteXmlFile=src/testng.xml test
+mvn -DsuiteXmlFile=testng.xml test
 ```
 
 ## Key Components
-- **Page Objects**: Encapsulate UI interactions for each screen (e.g., WelcomePage, PinCodePage, HomePage, ImportSeedPage, etc.)
+- **Page Objects**: Encapsulate UI interactions for each screen (e.g., WelcomePage, PassCodePage, HomePage, ImportSeedPage, etc.)
 - **TestData**: Centralized test data and constants
 - **WaitUtils**: Utility methods for explicit waits
 - **BaseTest**: Common setup/teardown and flows for all tests
 
 ## Manual Test Scenarios
-Manual test scenarios in Gherkin format can be found in `src/test/java/tests/Manual_Tests.md`.
-
-## Notes
-- The project does **not** include SendTests or ImportWalletTests in this version.
-- Update device capabilities and Appium server URL in `DriverUtils` if needed.
-- For new test suites, follow the Page Object Model and add your tests in the appropriate folder.
+Manual test scenarios in Gherkin format can be found in `manual_tests.md` in the project root.
 
 ## License
 MIT 
