@@ -11,4 +11,7 @@ public class TestData {
     public static final String TEST_PRIVATE_KEY = "abcdef1234567890abcdef1234567890abcdef1234567890abcdef1234567890";
     public static final String TEST_SEED_PHRASE = "seed phrase";
     public static final String INVALID_SEED_PHRASE = "invalid seed phrase";
+    public static final String INVALID_SEED_PHRASE_ERROR_MESSAGE = "Invalid seed phrase";
+    public static final String IMPORT_METHOD_TITLE = "Add existing wallet";
+    public static final String IMPORT_SEED_TITLE = "Import seed";
 }

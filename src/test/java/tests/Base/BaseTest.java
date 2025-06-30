@@ -1,5 +1,6 @@
 package tests.Base;
 
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -8,19 +9,18 @@ import pages.*;
 
 public class BaseTest {
 
-    protected CreateWalletPage createWalletPage;
     protected EnableNotificationsPage enableNotificationsPage;
     protected WalletReadyPage walletReadyPage;
     protected HomePage homePage;
     protected ReceivePage receivePage;
     protected PinCodePage pinCodePage;
-    protected ImportWalletPage importWalletPage;
+    protected WelcomePage welcomePage;
     protected SendPage sendPage;
 
     @BeforeMethod
     public void setUp() {
         DriverUtils.initializeDriver();
-        importWalletPage = new ImportWalletPage();
+        welcomePage = new WelcomePage();
     }
 
     @AfterMethod
@@ -29,18 +29,22 @@ public class BaseTest {
     }
 
     protected HomePage importWalletFlow() {
-        importWalletPage = createWalletPage.clickImportWalletButton();
-        importWalletPage.waitForImportPageToLoad();
-        
-        importWalletPage.enterSeedPhrase(TestData.TEST_SEED_PHRASE);
-        
-        pinCodePage = importWalletPage.clickImportButton();
-        
-        pinCodePage.enterPinCode();
-        pinCodePage.enterPinCode();
-        
-        homePage = walletReadyPage.clickButton();
-        return homePage;
+            PinCodePage pinCodePage = welcomePage.clickImportWalletButton();
+            String actualTitle = pinCodePage.getPassCodeText();
+            Assert.assertEquals(actualTitle, TestData.CREATE_PASSCODE_TEXT);
+            
+            pinCodePage.enterPinCode();
+            String confirmPasscodeText = pinCodePage.getConfirmPasscodeText();
+            Assert.assertEquals(confirmPasscodeText, TestData.CONFIRM_PASSCODE_TEXT);
+    
+            pinCodePage.enterPinCode();
+            String enableNotificationsTitle = enableNotificationsPage.getMarketTitle();
+            Assert.assertEquals(enableNotificationsTitle, TestData.MARKET_TITLE_TEXT);
+    
+            String walletReadyMessage = walletReadyPage.getWalletReadyMessage();
+            Assert.assertEquals(walletReadyMessage, TestData.WALLET_READY_MESSAGE);
+            HomePage homePage = walletReadyPage.clickButton();
+            Assert.assertTrue(homePage.isHomeNavigationButtonDisplayed());
+            return homePage;
     }
-
 }
