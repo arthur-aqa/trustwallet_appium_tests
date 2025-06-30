@@ -20,4 +20,11 @@ public class ConfirmPasscodePage extends BasePage {
         }
         return new ImportMethodPage();
     }
+
+    public EnableNotificationsPage confirmPasscodeNotifications() {
+        for (char digit : TestData.DEFAULT_PIN_CODE.toCharArray()) {
+            click(pinDigit(digit));
+        }
+        return new EnableNotificationsPage();
+    }
 }

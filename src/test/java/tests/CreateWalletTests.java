@@ -5,6 +5,9 @@ import org.testng.annotations.Test;
 
 import pages.HomePage;
 import pages.PassCodePage;
+import pages.ConfirmPasscodePage;
+import pages.EnableNotificationsPage;
+import pages.WalletReadyPage;
 import utils.TestData;
 
 public class CreateWalletTests extends BaseTest {
@@ -13,20 +16,19 @@ public class CreateWalletTests extends BaseTest {
     public HomePage testCreateWallet() {
         PassCodePage passCodePage = welcomePage.clickCreateWalletButton();
         String actualTitle = passCodePage.getPassCodeText();
-        Assert.assertEquals(actualTitle, TestData.CREATE_PASSCODE_TEXT);
+        Assert.assertEquals(actualTitle, TestData.CREATE_PASSCODE_TEXT, "Passcode page title mismatch");
         
-        passCodePage.enterPasscode();
-        String confirmPasscodeText = passCodePage.getConfirmPasscodeText();
-        Assert.assertEquals(confirmPasscodeText, TestData.CONFIRM_PASSCODE_TEXT);
+        ConfirmPasscodePage confirmPasscodePage = passCodePage.enterPasscode();
+        Assert.assertEquals(confirmPasscodePage.getConfirmPasscodeText(), TestData.CONFIRM_PASSCODE_TEXT, "Confirm passcode page title mismatch");
 
-        passCodePage.enterPasscode();
-        String enableNotificationsTitle = enableNotificationsPage.getMarketTitle();
-        Assert.assertEquals(enableNotificationsTitle, TestData.MARKET_TITLE_TEXT);
+        EnableNotificationsPage enableNotificationsPage = confirmPasscodePage.confirmPasscodeNotifications();
+        Assert.assertEquals(enableNotificationsPage.getMarketTitle(), TestData.MARKET_TITLE_TEXT, "Market title mismatch");
 
-        String walletReadyMessage = walletReadyPage.getWalletReadyMessage();
-        Assert.assertEquals(walletReadyMessage, TestData.WALLET_READY_MESSAGE);
+        WalletReadyPage walletReadyPage = enableNotificationsPage.clickSkipButtonWalletReadyPage();
+        Assert.assertEquals(walletReadyPage.getWalletReadyMessage(), TestData.WALLET_READY_MESSAGE, "Wallet ready page title mismatch");
+
         HomePage homePage = walletReadyPage.clickButton();
-        Assert.assertTrue(homePage.isHomeNavigationButtonDisplayed());
+        Assert.assertTrue(homePage.isHomeNavigationButtonDisplayed(), "Home page navigation button should be displayed");
         return homePage;
     }
 }

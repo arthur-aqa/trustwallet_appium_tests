@@ -10,11 +10,14 @@ public class BaseTest {
 
     protected EnableNotificationsPage enableNotificationsPage;
     protected WalletReadyPage walletReadyPage;
-    protected HomePage homePage;
-    protected ReceivePage receivePage;
     protected PassCodePage passCodePage;
     protected WelcomePage welcomePage;
-    protected SendPage sendPage;
+    protected ConfirmPasscodePage confirmPasscodePage;
+    protected ImportMethodPage importMethodPage;
+    protected ImportCheckmarksPage importCheckmarksPage;
+    protected SelectNetworkPage selectNetworkPage;
+    protected MultiCoinWalletImportPage multiCoinWalletImportPage; 
+    protected WalletReadyPage walletReadyPage;
 
     @BeforeMethod
     public void setUp() {

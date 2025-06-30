@@ -18,7 +18,7 @@ public class ImportWalletTests extends BaseTest {
         ImportCheckmarksPage checkmarksPage = Import.clickImportMethod(methodPage);
         SelectNetworkPage selectNetworkPage = Import.acceptAllCheckmarks(checkmarksPage);
         MultiCoinWalletImportPage walletPage = Import.clickSelectNetwork(selectNetworkPage);
-        WalletReadyPage walletReadyPage = Import.enterSecretPhraseAndRestore(walletPage, TestData.TEST_SEED_PHRASE);
+        Import.enterSecretPhraseAndRestore(walletPage, TestData.TEST_SECRET_PHRASE);
         Import.clickWalletReady(walletReadyPage);
     }
 
@@ -31,8 +31,8 @@ public class ImportWalletTests extends BaseTest {
         ImportCheckmarksPage checkmarksPage = Import.clickImportMethod(methodPage);
         SelectNetworkPage selectNetworkPage = Import.acceptAllCheckmarks(checkmarksPage);
         MultiCoinWalletImportPage walletPage = Import.clickSelectNetwork(selectNetworkPage);
-        WalletReadyPage walletReadyPage = Import.enterSecretPhraseAndRestore(walletPage, TestData.INVALID_SEED_PHRASE);
-        Import.clickWalletReady(walletReadyPage);
+        Import.enterSecretPhraseAndRestore(walletPage, TestData.INVALID_SECRET_PHRASE);
+        Assert.assertTrue(walletPage.isToastDisplayed(), "Toast with 'Invalid mnemonic phrase' should be displayed");
     }
 
   
