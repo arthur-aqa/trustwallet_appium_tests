@@ -8,16 +8,17 @@ import pages.*;
 
 public class BaseTest {
 
-    protected EnableNotificationsPage enableNotificationsPage;
-    protected WalletReadyPage walletReadyPage;
+    protected HomePage homePage;
     protected PassCodePage passCodePage;
     protected WelcomePage welcomePage;
     protected ConfirmPasscodePage confirmPasscodePage;
     protected ImportMethodPage importMethodPage;
     protected ImportCheckmarksPage importCheckmarksPage;
     protected SelectNetworkPage selectNetworkPage;
-    protected MultiCoinWalletImportPage multiCoinWalletImportPage; 
+    protected MultiCoinWalletImportPage multiCoinWalletImportPage;
+    protected EnableNotificationsPage enableNotificationsPage;
     protected WalletReadyPage walletReadyPage;
+    protected SendPage sendPage;
 
     @BeforeMethod
     public void setUp() {

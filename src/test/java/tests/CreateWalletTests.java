@@ -5,9 +5,12 @@ import org.testng.annotations.Test;
 
 import pages.HomePage;
 import pages.PassCodePage;
+<<<<<<< HEAD
 import pages.ConfirmPasscodePage;
 import pages.EnableNotificationsPage;
 import pages.WalletReadyPage;
+=======
+>>>>>>> 5b596f0 (feat: рефакторинг импортов, хелперов и тестов для флоу импорта кошелька)
 import utils.TestData;
 
 public class CreateWalletTests extends BaseTest {
@@ -16,6 +19,7 @@ public class CreateWalletTests extends BaseTest {
     public HomePage testCreateWallet() {
         PassCodePage passCodePage = welcomePage.clickCreateWalletButton();
         String actualTitle = passCodePage.getPassCodeText();
+<<<<<<< HEAD
         Assert.assertEquals(actualTitle, TestData.CREATE_PASSCODE_TEXT, "Passcode page title mismatch");
         
         ConfirmPasscodePage confirmPasscodePage = passCodePage.enterPasscode();
@@ -29,6 +33,22 @@ public class CreateWalletTests extends BaseTest {
 
         HomePage homePage = walletReadyPage.clickButton();
         Assert.assertTrue(homePage.isHomeNavigationButtonDisplayed(), "Home page navigation button should be displayed");
+=======
+        Assert.assertEquals(actualTitle, TestData.CREATE_PASSCODE_TEXT);
+        
+        passCodePage.enterPasscode();
+        String confirmPasscodeText = passCodePage.getConfirmPasscodeText();
+        Assert.assertEquals(confirmPasscodeText, TestData.CONFIRM_PASSCODE_TEXT);
+
+        passCodePage.enterPasscode();
+        String enableNotificationsTitle = enableNotificationsPage.getMarketTitle();
+        Assert.assertEquals(enableNotificationsTitle, TestData.MARKET_TITLE_TEXT);
+
+        String walletReadyMessage = walletReadyPage.getWalletReadyMessage();
+        Assert.assertEquals(walletReadyMessage, TestData.WALLET_READY_MESSAGE);
+        HomePage homePage = walletReadyPage.clickButton();
+        Assert.assertTrue(homePage.isHomeNavigationButtonDisplayed());
+>>>>>>> 5b596f0 (feat: рефакторинг импортов, хелперов и тестов для флоу импорта кошелька)
         return homePage;
     }
 }
