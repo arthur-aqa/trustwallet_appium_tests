@@ -5,7 +5,7 @@ import org.testng.Assert;
 import pages.*;
 import utils.TestData;
 
-public class ImportHelper {
+public class Import {
 
     public static PassCodePage clickImportWalletButton(WelcomePage welcomePage) {
         return welcomePage.clickImportWalletButton();
